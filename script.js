@@ -3,6 +3,7 @@ const countryApi = async (event) => {
   const countries = document.querySelector(".countries");
   const regionSelect = document.getElementById("region-select");
   const searchInput = document.getElementById("search-input");
+  const backButton = document.getElementById("backButton");
 
   await fetch(api)
     .then((response) => response.json())
@@ -93,11 +94,11 @@ const showModal = (element) => {
   flagImg.src = flags.svg;
   flagImg.alt = `${name.common}'s flag`;
 
+  modalContent.appendChild(flagImg);
   modalContent.appendChild(countryName);
   modalContent.appendChild(populationPara);
   modalContent.appendChild(regionPara);
   modalContent.appendChild(capitalPara);
-  modalContent.appendChild(flagImg);
 
   modal.style.display = "flex";
 };
@@ -114,3 +115,5 @@ document.addEventListener("click", function (event) {
     closeModal();
   }
 });
+
+backButton.addEventListener("click", closeModal);
