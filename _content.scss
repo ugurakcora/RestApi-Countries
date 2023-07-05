@@ -1,0 +1,39 @@
+.countries {
+  max-width: 80rem;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.country {
+  width: calc(25% - 10px);
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.country h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.country img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Eğer 4'erli gruplar yan yana sığmazsa, alt alta geçmesini sağlar */
+@media (max-width: 768px) {
+  .country {
+    width: 100%;
+  }
+}

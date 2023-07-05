@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <nav class="header_nav">
+      <h1>Başlık</h1>
+      <button>Dark Mode</button>
+    </nav>
+  </header>
+  <main>
+    <div class="filters">
+      <label for="region-select">Region:</label>
+      <select id="region-select">
+        <option value="">All</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">Americas</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+      <label for="search-input">Search:</label>
+      <input type="text" id="search-input">
+    </div>
+
+    <div class="countries">
+
+    </div>
+    <div id="modal">
+      <div id="modalContent" class="modal-content"></div>
+    </div>
+  </main>
+</body>
+<script src="script.js"></script>
+
+</html>
