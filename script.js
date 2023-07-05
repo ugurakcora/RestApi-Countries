@@ -74,6 +74,7 @@ const countryApi = async (event) => {
 const showModal = (element) => {
   const modal = document.getElementById("modal");
   const modalContent = document.getElementById("modalContent");
+  const countries = document.querySelector(".countries");
   modalContent.innerHTML = "";
 
   const { name, population, region, capital, flags } = element;
@@ -101,11 +102,14 @@ const showModal = (element) => {
   modalContent.appendChild(capitalPara);
 
   modal.style.display = "flex";
+  countries.style.display = "none";
 };
 
 const closeModal = () => {
   const modal = document.getElementById("modal");
+  const countries = document.querySelector(".countries");
   modal.style.display = "none";
+  countries.style.display = "flex";
 };
 
 document.addEventListener("DOMContentLoaded", countryApi);
