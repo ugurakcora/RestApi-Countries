@@ -38,16 +38,18 @@ const countryApi = async (event) => {
         filteredData.forEach((element) => {
           const { name, population, region, capital, flags } = element;
 
-          let country = document.createElement("div");
+          let country = document.createElement("article");
           country.classList.add("country");
 
           let imageBtn = document.createElement("button");
           let countryDetails = document.createElement("div");
+          let figure = document.createElement("figure");
           let img = document.createElement("img");
 
           img.src = flags.svg;
           img.alt = `${name.common}'s flag`;
-          imageBtn.appendChild(img);
+          imageBtn.appendChild(figure);
+          figure.appendChild(img);
 
           countryDetails.innerHTML = `
                 <h2>${name.common}</h2>
@@ -121,3 +123,19 @@ document.addEventListener("click", function (event) {
 });
 
 backButton.addEventListener("click", closeModal);
+
+const darkMode = () => {
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleSwitch = document.querySelector("#toggle");
+
+    toggleSwitch.addEventListener("change", function () {
+      if (this.checked) {
+        document.body.classList.add("dark-mode");
+      } else {
+        document.body.classList.remove("dark-mode");
+      }
+    });
+  });
+};
+
+darkMode();

@@ -15,26 +15,31 @@
   <header class="header">
     <nav class="header_nav">
       <h1>Başlık</h1>
-      <button>Dark Mode</button>
+      <div class="dark-mode-toggle">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle"></label>
+      </div>
     </nav>
   </header>
   <main>
-    <div class="filters">
-      <label for="region-select">Region:</label>
-      <select id="region-select">
-        <option value="">All</option>
-        <option value="Africa">Africa</option>
-        <option value="Americas">Americas</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
-      </select>
-      <label for="search-input">Search:</label>
-      <input type="text" id="search-input">
-    </div>
+    <div class="container">
+      <div class="filters">
+        <label for="region-select">Region:</label>
+        <select id="region-select">
+          <option value="">All</option>
+          <option value="Africa">Africa</option>
+          <option value="Americas">Americas</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+        <label for="search-input">Search:</label>
+        <input type="text" id="search-input">
+      </div>
 
-    <div class="countries">
+      <section class="countries">
 
+      </section>
     </div>
     <div id="modal">
       <div id="modalContent" class="modal-content">

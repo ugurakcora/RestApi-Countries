@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1440px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

@@ -65,6 +65,15 @@ select {
   font: inherit;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1440px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -86,8 +95,6 @@ select {
 }
 
 .countries {
-  max-width: 80rem;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -177,4 +184,53 @@ select {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+body {
+  transition: background-color 0.5s ease;
+}
+
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.dark-mode-toggle input[type=checkbox] {
+  display: none;
+}
+
+.dark-mode-toggle label {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+  background-color: #ccc;
+  border-radius: 34px;
+  cursor: pointer;
+}
+
+.dark-mode-toggle label::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle input[type=checkbox]:checked + label {
+  background-color: #6b8096;
+}
+
+.dark-mode-toggle input[type=checkbox]:checked + label::after {
+  transform: translateX(26px);
 }/*# sourceMappingURL=main.css.map */
