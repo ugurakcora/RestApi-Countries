@@ -132,7 +132,10 @@ select {
   }
 }
 .filters {
+  display: flex;
   margin-bottom: 10px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 #modal {
