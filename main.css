@@ -133,7 +133,7 @@ select {
 }
 .filters {
   display: flex;
-  margin-bottom: 10px;
+  margin: 10px 0;
   justify-content: space-between;
   width: 100%;
 }
@@ -194,20 +194,28 @@ body {
 }
 
 .dark-mode {
-  background-color: #222;
+  background-color: hsl(209, 23%, 22%);
   color: #fff;
 }
-
+.dark-mode .header {
+  background-color: hsl(209, 23%, 22%);
+  color: #fff;
+}
 .dark-mode-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+  background-color: #ccc;
+  border-radius: 34px;
+  cursor: pointer;
 }
-
 .dark-mode-toggle input[type=checkbox] {
   display: none;
 }
-
 .dark-mode-toggle label {
   display: inline-block;
   width: 60px;
@@ -217,7 +225,6 @@ body {
   border-radius: 34px;
   cursor: pointer;
 }
-
 .dark-mode-toggle label::after {
   content: "";
   position: absolute;
@@ -229,11 +236,9 @@ body {
   background-color: #fff;
   transition: transform 0.3s ease;
 }
-
 .dark-mode-toggle input[type=checkbox]:checked + label {
   background-color: #6b8096;
 }
-
 .dark-mode-toggle input[type=checkbox]:checked + label::after {
   transform: translateX(26px);
 }/*# sourceMappingURL=main.css.map */
