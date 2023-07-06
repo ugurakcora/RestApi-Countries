@@ -38,6 +38,25 @@
       border-radius: 8px;
       margin-bottom: 20px;
     }
+
+    .info {
+      .border-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        li {
+          background-color: $color-white;
+          color: $color-dark-blue;
+          border: 1px solid $color-dark-blue;
+          padding: 5px 10px;
+
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
   }
 
   &_back {

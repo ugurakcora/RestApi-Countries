@@ -150,22 +150,15 @@ const showModal = (element, filteredData) => {
   const borderCountriesPara = document.createElement("p");
   borderCountriesPara.textContent = "Border Countries: ";
 
-  if (borders && borders.length > 0) {
-    const borderCountryNames = borders.map((borderAlphaCode) => {
-      const borderCountry = filteredData.find(
-        (country) => country.alpha3Code === borderAlphaCode
-      );
-      if (borderCountry) {
-        return borderCountry.name.common;
-      }
-    });
+  const borderList = document.createElement("ul");
+  borderList.classList.add("border-list");
 
-    borderCountriesPara.textContent += borderCountryNames
-      .filter(Boolean)
-      .join(", ");
-  } else {
-    borderCountriesPara.textContent += "None";
-  }
+  borders.forEach((borderCode) => {
+    console.log(borderCode);
+    const borderListItem = document.createElement("li");
+    borderListItem.textContent = borderCode;
+    borderList.appendChild(borderListItem);
+  });
 
   infoDiv.appendChild(countryName);
   infoDiv.appendChild(nativeName);
@@ -177,6 +170,7 @@ const showModal = (element, filteredData) => {
   infoDiv.appendChild(currenciesPara);
   infoDiv.appendChild(languagesPara);
   infoDiv.appendChild(borderCountriesPara);
+  infoDiv.appendChild(borderList);
 
   modalContent.appendChild(flagDiv);
   modalContent.appendChild(infoDiv);

@@ -65,6 +65,15 @@ body {
 
   .info {
     color: $color-white;
+
+    .border-list {
+
+      li {
+        background-color: $color-very-dark-blue;
+        color: $color-white;
+        border: 1px solid $color-white;
+      }
+    }
   }
 
   .modal_back-button {
