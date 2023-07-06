@@ -52,13 +52,12 @@
   text-transform: uppercase;
   margin-bottom: 50px;
   width: 100px;
-}
 
-.back-button:hover {
-
-  background-color: $color-dark-blue;
-  color: $color-white;
-  border: 1px solid $color-dark-blue;
+  &:hover {
+    background-color: $color-dark-blue;
+    color: $color-white;
+    border: 1px solid $color-dark-blue;
+  }
 }
 
 .image-container {

@@ -3,12 +3,16 @@ body {
 }
 
 .dark-mode {
-  background-color: $color-dark-blue;
+  background-color: $color-very-dark-blue;
   color: $color-white;
 
-  .header,
-  #modal {
+  .header {
     background-color: $color-dark-blue;
+    color: $color-white;
+  }
+
+  #modal {
+    background-color: $color-very-dark-blue;
     color: $color-white;
   }
 

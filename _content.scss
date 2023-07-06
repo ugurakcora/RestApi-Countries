@@ -7,20 +7,30 @@
 .country {
   width: calc(25% - 10px);
   margin-bottom: 20px;
-  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
 
-.country h2 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
+  div {
+    padding: 10px;
+  }
 
-.country img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+  button {
+    background-color: inherit;
+    outline: none;
+    border: none;
+    padding: 0;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
 }
 
 /* Eğer 4'erli gruplar yan yana sığmazsa, alt alta geçmesini sağlar */

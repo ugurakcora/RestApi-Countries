@@ -68,7 +68,6 @@ select {
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   margin: 0 auto;
   max-width: 1440px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -103,16 +102,22 @@ select {
 .country {
   width: calc(25% - 10px);
   margin-bottom: 20px;
-  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
+.country div {
+  padding: 10px;
+}
+.country button {
+  background-color: inherit;
+  outline: none;
+  border: none;
+  padding: 0;
+}
 .country h2 {
   margin-top: 0;
   margin-bottom: 10px;
 }
-
 .country img {
   width: 100%;
   height: auto;
@@ -139,7 +144,7 @@ select {
   margin-inline: auto;
   top: 0;
   left: 0;
-  background-color: #FFFFFF;
+  background-color: hsl(0, 0%, 100%);
   padding: 100px 0 0 0;
 }
 #modal .container {
@@ -170,7 +175,7 @@ select {
 .back-button {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #FFFFFF;
+  background-color: hsl(0, 0%, 100%);
   color: hsl(209, 23%, 22%);
   border: 1px solid hsl(209, 23%, 22%) !important;
   border: none;
@@ -181,10 +186,9 @@ select {
   margin-bottom: 50px;
   width: 100px;
 }
-
 .back-button:hover {
   background-color: hsl(209, 23%, 22%);
-  color: #FFFFFF;
+  color: hsl(0, 0%, 100%);
   border: 1px solid hsl(209, 23%, 22%);
 }
 
@@ -202,13 +206,16 @@ body {
 }
 
 .dark-mode {
-  background-color: hsl(209, 23%, 22%);
-  color: #FFFFFF;
+  background-color: hsl(207, 26%, 17%);
+  color: hsl(0, 0%, 100%);
 }
-.dark-mode .header,
-.dark-mode #modal {
+.dark-mode .header {
   background-color: hsl(209, 23%, 22%);
-  color: #FFFFFF;
+  color: hsl(0, 0%, 100%);
+}
+.dark-mode #modal {
+  background-color: hsl(207, 26%, 17%);
+  color: hsl(0, 0%, 100%);
 }
 .dark-mode-toggle {
   position: fixed;
@@ -250,10 +257,10 @@ body {
   transform: translateX(26px);
 }
 .dark-mode .info {
-  color: #FFFFFF;
+  color: hsl(0, 0%, 100%);
 }
 .dark-mode .back-button {
   background-color: hsl(209, 23%, 22%);
-  color: #FFFFFF;
-  border: 1px solid #FFFFFF !important;
+  color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 100%) !important;
 }/*# sourceMappingURL=main.css.map */
