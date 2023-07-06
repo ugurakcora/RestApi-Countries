@@ -331,7 +331,6 @@ body {
 .dark-mode .filters .region-select__wrapper select {
   background-color: hsl(209, 23%, 22%);
   color: hsl(0, 0%, 100%);
-  border: 1px solid hsl(0, 0%, 100%);
 }
 .dark-mode .filters .region-select__wrapper i {
   color: hsl(0, 0%, 100%);
