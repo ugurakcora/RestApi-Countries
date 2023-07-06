@@ -21,6 +21,10 @@
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
     h2 {
       font-size: 24px;
       margin-bottom: 20px;

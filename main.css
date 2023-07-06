@@ -72,6 +72,11 @@ select {
   max-width: 1440px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
+@media (max-width: 768px) {
+  .container {
+    width: 375px;
+  }
+}
 
 .header {
   position: sticky;
@@ -87,6 +92,11 @@ select {
   margin: auto;
   padding: 15px 0;
   max-width: 1440px;
+}
+@media (max-width: 768px) {
+  .header_nav {
+    width: 375px;
+  }
 }
 .header_nav h1 {
   font-size: 1.5rem;
@@ -157,6 +167,11 @@ select {
   color: hsl(209, 23%, 22%);
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+  }
 }
 .modal-content h2 {
   font-size: 24px;
