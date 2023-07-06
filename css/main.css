@@ -155,7 +155,7 @@ select {
   left: 5px;
 }
 .filters .search input[type=text] {
-  padding: 8px 30px 8px 25px;
+  padding: 12px 40px 12px 25px;
   border: 1px solid hsl(209, 23%, 22%) !important;
   border-radius: 4px;
   font-size: 14px;
