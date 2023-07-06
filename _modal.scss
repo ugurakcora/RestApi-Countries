@@ -6,47 +6,59 @@
   top: 0;
   left: 0;
   background-color: $color-white;
-  padding: 30px 0;
+  padding: 100px 0 0 0;
 
+  .container {
+    flex-direction: column;
+  }
 }
 
-.modal-content {
-  border-radius: 8px;
-  width: 90%;
-  color: $color-dark-blue;
-}
+.modal {
+  &-content {
+    border-radius: 8px;
+    width: 100%;
+    color: $color-dark-blue;
+    display: flex;
+    justify-content: space-between;
 
-.modal-content h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
 
-.modal-content p {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
 
-.modal-content img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 20px;
+    img {
+      width: 800px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .back-button {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #374754;
+  background-color: $color-white;
+  color: $color-dark-blue;
+  border: 1px solid $color-dark-blue !important;
   border: none;
   border-radius: 8px;
-  color: #fff;
   cursor: pointer;
   font-size: 16px;
   text-transform: uppercase;
   margin-bottom: 50px;
+  width: 100px;
 }
 
 .back-button:hover {
-  background-color: #293641;
+
+  background-color: $color-dark-blue;
+  color: $color-white;
+  border: 1px solid $color-dark-blue;
 }
 
 .image-container {

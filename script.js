@@ -67,7 +67,7 @@ const countryApi = async (event) => {
           countries.appendChild(country);
 
           imageBtn.addEventListener("click", function () {
-            showModal(element);
+            showModal(element, filteredData); // filteredData parametresi eklendi
           });
         });
       };
@@ -78,7 +78,7 @@ const countryApi = async (event) => {
 };
 
 // Modal Açmak için
-const showModal = (element) => {
+const showModal = (element, filteredData) => {
   const modal = document.getElementById("modal");
   const modalContent = document.getElementById("modalContent");
   const countries = document.querySelector(".countries");
@@ -100,6 +100,15 @@ const showModal = (element) => {
   const countryName = document.createElement("h2");
   countryName.textContent = name.common;
 
+  const flagDiv = document.createElement("div");
+  flagDiv.classList.add("flag");
+  const flagImg = document.createElement("img");
+  flagImg.src = flags.svg;
+  flagImg.alt = `${name.common}'s flag`;
+  flagDiv.appendChild(flagImg);
+
+  const infoDiv = document.createElement("div");
+  infoDiv.classList.add("info");
   const nativeName = document.createElement("p");
   nativeName.textContent = `Native Name: ${name.official}`;
 
@@ -139,23 +148,38 @@ const showModal = (element) => {
     languageCodes.map((code, index) => `${languageNames[index]}`).join(", ");
 
   const borderCountriesPara = document.createElement("p");
-  borderCountriesPara.textContent = "Border Countries: " + borders.join(" ");
+  borderCountriesPara.textContent = "Border Countries: ";
 
-  const flagImg = document.createElement("img");
-  flagImg.src = flags.svg;
-  flagImg.alt = `${name.common}'s flag`;
+  if (borders && borders.length > 0) {
+    const borderCountryNames = borders.map((borderAlphaCode) => {
+      const borderCountry = filteredData.find(
+        (country) => country.alpha3Code === borderAlphaCode
+      );
+      if (borderCountry) {
+        return borderCountry.name.common;
+      }
+    });
 
-  modalContent.appendChild(flagImg);
-  modalContent.appendChild(countryName);
-  modalContent.appendChild(nativeName);
-  modalContent.appendChild(populationPara);
-  modalContent.appendChild(regionPara);
-  modalContent.appendChild(subRegionPara);
-  modalContent.appendChild(capitalPara);
-  modalContent.appendChild(domainPara);
-  modalContent.appendChild(currenciesPara);
-  modalContent.appendChild(languagesPara);
-  modalContent.appendChild(borderCountriesPara);
+    borderCountriesPara.textContent += borderCountryNames
+      .filter(Boolean)
+      .join(", ");
+  } else {
+    borderCountriesPara.textContent += "None";
+  }
+
+  infoDiv.appendChild(countryName);
+  infoDiv.appendChild(nativeName);
+  infoDiv.appendChild(populationPara);
+  infoDiv.appendChild(regionPara);
+  infoDiv.appendChild(subRegionPara);
+  infoDiv.appendChild(capitalPara);
+  infoDiv.appendChild(domainPara);
+  infoDiv.appendChild(currenciesPara);
+  infoDiv.appendChild(languagesPara);
+  infoDiv.appendChild(borderCountriesPara);
+
+  modalContent.appendChild(flagDiv);
+  modalContent.appendChild(infoDiv);
 
   modal.style.display = "block";
   countries.style.display = "none";

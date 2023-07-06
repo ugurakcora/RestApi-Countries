@@ -6,7 +6,8 @@ body {
   background-color: $color-dark-blue;
   color: $color-white;
 
-  .header {
+  .header,
+  #modal {
     background-color: $color-dark-blue;
     color: $color-white;
   }
@@ -56,5 +57,15 @@ body {
 
       }
     }
+  }
+
+  .info {
+    color: $color-white;
+  }
+
+  .back-button {
+    background-color: $color-dark-blue;
+    color: $color-white;
+    border: 1px solid $color-white !important;
   }
 }
