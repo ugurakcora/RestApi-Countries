@@ -48,8 +48,7 @@ body {
 }
 
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 img,
@@ -146,8 +145,61 @@ select {
   justify-content: space-between;
   width: 100%;
 }
+.filters .search {
+  position: relative;
+}
+.filters .search label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+}
+.filters .search input[type=text] {
+  padding: 8px 30px 8px 25px;
+  border: 1px solid hsl(209, 23%, 22%) !important;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+}
+.filters .region {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.filters .region label {
+  color: hsl(0, 0%, 100%);
+  font-size: 14px;
+}
+.filters .region-select__wrapper {
+  position: relative;
+}
+.filters .region-select__wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: hsl(0, 0%, 100%);
+  border: none;
+  outline: none;
+  color: hsl(209, 23%, 22%);
+  padding: 12px 40px 12px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid hsl(209, 23%, 22%);
+  cursor: pointer;
+}
+.filters .region-select__wrapper select::-ms-expand {
+  display: none;
+}
+.filters .region-select__wrapper i {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  color: hsl(209, 23%, 22%);
+}
 
-#modal {
+.modal {
   position: absolute;
   width: 100%;
   min-height: 100vh;
@@ -157,10 +209,9 @@ select {
   background-color: hsl(0, 0%, 100%);
   padding: 100px 0 0 0;
 }
-#modal .container {
+.modal .container {
   flex-direction: column;
 }
-
 .modal-content {
   border-radius: 8px;
   width: 100%;
@@ -187,7 +238,7 @@ select {
   margin-bottom: 20px;
 }
 
-.back-button {
+.modal_back-button {
   margin-top: 10px;
   padding: 10px 20px;
   background-color: hsl(0, 0%, 100%);
@@ -201,19 +252,10 @@ select {
   margin-bottom: 50px;
   width: 100px;
 }
-.back-button:hover {
+.modal_back-button:hover {
   background-color: hsl(209, 23%, 22%);
   color: hsl(0, 0%, 100%);
   border: 1px solid hsl(209, 23%, 22%);
-}
-
-.image-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.data-container {
-  margin-bottom: 20px;
 }
 
 body {
@@ -274,8 +316,23 @@ body {
 .dark-mode .info {
   color: hsl(0, 0%, 100%);
 }
-.dark-mode .back-button {
+.dark-mode .modal_back-button {
   background-color: hsl(209, 23%, 22%);
   color: hsl(0, 0%, 100%);
   border: 1px solid hsl(0, 0%, 100%) !important;
+}
+.dark-mode .filters .search input {
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+}
+.dark-mode .filters .region label {
+  color: hsl(0, 0%, 100%);
+}
+.dark-mode .filters .region-select__wrapper select {
+  background-color: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 100%);
+}
+.dark-mode .filters .region-select__wrapper i {
+  color: hsl(0, 0%, 100%);
 }/*# sourceMappingURL=main.css.map */

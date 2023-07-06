@@ -67,9 +67,39 @@ body {
     color: $color-white;
   }
 
-  .back-button {
+  .modal_back-button {
     background-color: $color-dark-blue;
     color: $color-white;
     border: 1px solid $color-white !important;
+  }
+
+  .filters {
+    .search {
+      input {
+        background-color: $color-dark-blue;
+        color: $color-white;
+      }
+    }
+
+    .region {
+      label {
+        color: $color-white;
+      }
+
+      &-select {
+        &__wrapper {
+
+          select {
+            background-color: $color-dark-blue;
+            color: $color-white;
+            border: 1px solid $color-white;
+          }
+
+          i {
+            color: $color-white;
+          }
+        }
+      }
+    }
   }
 }

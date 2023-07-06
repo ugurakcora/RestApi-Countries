@@ -1,4 +1,4 @@
-#modal {
+.modal {
   position: absolute;
   width: 100%;
   min-height: 100vh;
@@ -11,9 +11,7 @@
   .container {
     flex-direction: column;
   }
-}
 
-.modal {
   &-content {
     border-radius: 8px;
     width: 100%;
@@ -43,7 +41,7 @@
   }
 }
 
-.back-button {
+.modal_back-button {
   margin-top: 10px;
   padding: 10px 20px;
   background-color: $color-white;
@@ -62,13 +60,4 @@
     color: $color-white;
     border: 1px solid $color-dark-blue;
   }
-}
-
-.image-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.data-container {
-  margin-bottom: 20px;
 }

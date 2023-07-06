@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rest Api Countries With Nexum</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
@@ -25,19 +26,23 @@
     <div class="container">
       <div class="filters">
         <div class="search">
-          <label for="search-input">Search:</label>
-          <input type="text" id="search-input">
+          <input type="text" id="search-input" placeholder="Search for a country...">
+          <label for="search-input"><i class="fas fa-search"></i></label>
         </div>
+
         <div class="region">
-          <label for="region-select">Region:</label>
-          <select id="region-select">
-            <option value="">All</option>
-            <option value="Africa">Africa</option>
-            <option value="Americas">Americas</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-          </select>
+          <label for="region-select"></label>
+          <div class="region-select__wrapper">
+            <select id="region-select">
+              <option value="">Filter by Region</option>
+              <option value="Africa">Africa</option>
+              <option value="Americas">Americas</option>
+              <option value="Asia">Asia</option>
+              <option value="Europe">Europe</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+            <i class="fas fa-chevron-down"></i>
+          </div>
         </div>
 
       </div>
@@ -46,9 +51,9 @@
 
       </section>
     </div>
-    <div id="modal">
+    <div id="modal" class="modal">
       <div class="container">
-        <button id="backButton" class="back-button">Back</button>
+        <button id="backButton" class="modal_back-button">Back</button>
         <div id="modalContent" class="modal-content">
         </div>
       </div>
