@@ -237,8 +237,10 @@ select {
   border-radius: 8px;
   margin-bottom: 20px;
 }
-
 .modal_back-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 10px;
   padding: 10px 20px;
   background-color: hsl(0, 0%, 100%);

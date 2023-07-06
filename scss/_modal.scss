@@ -39,25 +39,30 @@
       margin-bottom: 20px;
     }
   }
-}
 
-.modal_back-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: $color-white;
-  color: $color-dark-blue;
-  border: 1px solid $color-dark-blue !important;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  text-transform: uppercase;
-  margin-bottom: 50px;
-  width: 100px;
+  &_back {
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: $color-white;
+      color: $color-dark-blue;
+      border: 1px solid $color-dark-blue !important;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+      width: 100px;
 
-  &:hover {
-    background-color: $color-dark-blue;
-    color: $color-white;
-    border: 1px solid $color-dark-blue;
+      &:hover {
+        background-color: $color-dark-blue;
+        color: $color-white;
+        border: 1px solid $color-dark-blue;
+      }
+    }
   }
 }
