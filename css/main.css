@@ -107,6 +107,15 @@ select {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.countries .no-results-message {
+  font-size: 1.2rem;
+  color: hsl(209, 23%, 22%);
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .country {
   width: calc(25% - 10px);
@@ -354,5 +363,8 @@ body {
   color: hsl(0, 0%, 100%);
 }
 .dark-mode .filters .region-select__wrapper i {
+  color: hsl(0, 0%, 100%);
+}
+.dark-mode .no-results-message {
   color: hsl(0, 0%, 100%);
 }/*# sourceMappingURL=main.css.map */

@@ -39,6 +39,14 @@ const countryApi = async (event) => {
       const renderCountries = () => {
         countries.innerHTML = "";
 
+        if (filteredData.length === 0) {
+          const noResultsMessage = document.createElement("p");
+          noResultsMessage.classList.add("no-results-message");
+          noResultsMessage.textContent = "Sonuç Bulunamadı";
+          countries.appendChild(noResultsMessage);
+          return; // Sonuç bulunamadığında diğer işlemlere devam etmeyin
+        }
+
         filteredData.forEach((element) => {
           const { name, population, region, capital, flags } = element;
 
