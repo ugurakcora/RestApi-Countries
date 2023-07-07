@@ -71,7 +71,7 @@ const countryApi = async (event) => {
           <h2>${name.common}</h2>
           <p>Population: ${population.toLocaleString()}</p>
           <p>Region: ${region}</p>
-          <p>Capital: ${capital}</p>
+          ${capital ? `<p>Capital: ${capital}</p>` : ""}
         `;
 
         country.appendChild(imageBtn);
@@ -144,7 +144,9 @@ const showModal = (element, filteredData) => {
   subRegionPara.textContent = `Sub Region: ${subregion}`;
 
   const capitalPara = document.createElement("p");
-  capitalPara.textContent = `Capital: ${capital}`;
+  if (typeof capital !== "undefined" && capital !== null) {
+    capitalPara.textContent = `Capital: ${capital}`;
+  }
 
   const domainPara = document.createElement("p");
   domainPara.textContent = `Top Level Domain: ${element.tld}`;
