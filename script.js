@@ -7,82 +7,96 @@ const countryApi = async (event) => {
   const backButton = document.getElementById("backButton");
   const modal = document.getElementById("modal");
 
-  await fetch(api)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
+  try {
+    const response = await fetch(api);
+    if (!response.ok) {
+      throw new Error("Hata: Veri alınamadı");
+    }
+    const data = await response.json();
 
-      modal.style.display = "none";
+    console.log(data);
 
-      let filteredData = data;
+    modal.style.display = "none";
 
-      const filterCountries = () => {
-        const selectedRegion = regionSelect.value.toLowerCase();
-        const searchValue = searchInput.value.toLowerCase();
+    let filteredData = data;
 
-        filteredData = data.filter((country) => {
-          const countryRegion = country.region.toLowerCase();
-          const countryName = country.name.common.toLowerCase();
+    const filterCountries = () => {
+      const selectedRegion = regionSelect.value.toLowerCase();
+      const searchValue = searchInput.value.toLowerCase();
 
-          return (
-            (selectedRegion === "" || countryRegion === selectedRegion) &&
-            (searchValue === "" || countryName.includes(searchValue))
-          );
-        });
+      filteredData = data.filter((country) => {
+        const countryRegion = country.region.toLowerCase();
+        const countryName = country.name.common.toLowerCase();
 
-        renderCountries();
-      };
-
-      regionSelect.addEventListener("change", filterCountries);
-      searchInput.addEventListener("input", filterCountries);
-
-      const renderCountries = () => {
-        countries.innerHTML = "";
-
-        if (filteredData.length === 0) {
-          const noResultsMessage = document.createElement("p");
-          noResultsMessage.classList.add("no-results-message");
-          noResultsMessage.textContent = "Sonuç Bulunamadı";
-          countries.appendChild(noResultsMessage);
-          return; // Sonuç bulunamadığında diğer işlemlere devam etmeyin
-        }
-
-        filteredData.forEach((element) => {
-          const { name, population, region, capital, flags } = element;
-
-          let country = document.createElement("article");
-          country.classList.add("country");
-
-          let imageBtn = document.createElement("button");
-          let countryDetails = document.createElement("div");
-          let figure = document.createElement("figure");
-          let img = document.createElement("img");
-
-          img.src = flags.svg;
-          img.alt = `${name.common}'s flag`;
-          imageBtn.appendChild(figure);
-          figure.appendChild(img);
-
-          countryDetails.innerHTML = `
-                <h2>${name.common}</h2>
-                <p>Population: ${population.toLocaleString()}</p>
-                <p>Region: ${region}</p>
-                <p>Capital: ${capital}</p>
-              `;
-
-          country.appendChild(imageBtn);
-          country.appendChild(countryDetails);
-          countries.appendChild(country);
-
-          imageBtn.addEventListener("click", function () {
-            showModal(element, filteredData); // filteredData parametresi eklendi
-          });
-        });
-      };
+        return (
+          (selectedRegion === "" || countryRegion === selectedRegion) &&
+          (searchValue === "" || countryName.includes(searchValue))
+        );
+      });
 
       renderCountries();
-    })
-    .catch((error) => console.log("Error:", error));
+    };
+
+    regionSelect.addEventListener("change", filterCountries);
+    searchInput.addEventListener("input", filterCountries);
+
+    const renderCountries = () => {
+      countries.innerHTML = "";
+
+      if (filteredData.length === 0) {
+        const noResultsMessage = document.createElement("p");
+        noResultsMessage.classList.add("no-results-message");
+        noResultsMessage.textContent = "Sonuç Bulunamadı";
+        countries.appendChild(noResultsMessage);
+        return; // Sonuç bulunamadığında diğer işlemlere devam etmeyin
+      }
+
+      filteredData.forEach((element) => {
+        const { name, population, region, capital, flags } = element;
+
+        let country = document.createElement("article");
+        country.classList.add("country");
+
+        let imageBtn = document.createElement("button");
+        let countryDetails = document.createElement("div");
+        let figure = document.createElement("figure");
+        let img = document.createElement("img");
+
+        img.src = flags.svg;
+        img.alt = `${name.common}'s flag`;
+        imageBtn.appendChild(figure);
+        figure.appendChild(img);
+
+        countryDetails.innerHTML = `
+          <h2>${name.common}</h2>
+          <p>Population: ${population.toLocaleString()}</p>
+          <p>Region: ${region}</p>
+          <p>Capital: ${capital}</p>
+        `;
+
+        country.appendChild(imageBtn);
+        country.appendChild(countryDetails);
+        countries.appendChild(country);
+
+        imageBtn.addEventListener("click", function () {
+          showModal(element, filteredData); // filteredData parametresi eklendi
+        });
+      });
+    };
+
+    renderCountries();
+  } catch (error) {
+    console.error("Hata:", error);
+    const filter = document.querySelector(".filters");
+    filter.style.display = "none";
+    modal.style.display = "none";
+    const errorMessage = document.createElement("p");
+
+    errorMessage.classList.add("no-results-message");
+    errorMessage.textContent =
+      "Servis hatası. Lütfen daha sonra tekrar deneyin.";
+    countries.appendChild(errorMessage);
+  }
 };
 
 // Modal Açmak için
