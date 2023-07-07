@@ -87,7 +87,6 @@ select {
 .header_nav {
   display: flex;
   justify-content: space-between;
-  padding-inline: 5rem;
   margin: auto;
   padding: 15px 0;
   max-width: 1440px;
@@ -170,6 +169,11 @@ select {
   font-size: 14px;
   outline: none;
   border: none;
+}
+@media (max-width: 768px) {
+  .filters .search input[type=text] {
+    padding: 12px 10px 12px 25px;
+  }
 }
 .filters .region {
   display: flex;
