@@ -175,12 +175,17 @@ const showModal = (element, filteredData) => {
   const borderList = document.createElement("ul");
   borderList.classList.add("border-list");
 
-  borders.forEach((borderCode) => {
-    console.log(borderCode);
-    const borderListItem = document.createElement("li");
-    borderListItem.textContent = borderCode;
-    borderList.appendChild(borderListItem);
-  });
+  if (borders) {
+    borders.forEach((borderCode) => {
+      console.log(borderCode);
+      const borderListItem = document.createElement("li");
+      borderListItem.textContent = borderCode;
+      borderList.appendChild(borderListItem);
+    });
+  } else {
+    borderCountriesPara.style.display = "none";
+    console.log("borders dizisi tanımlı değil veya undefined.");
+  }
 
   infoDiv.appendChild(countryName);
   infoDiv.appendChild(nativeName);
