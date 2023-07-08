@@ -241,9 +241,17 @@ backButton.addEventListener("click", closeModal);
 
 const darkMode = () => {
   const toggleSwitch = document.querySelector("#toggle");
+  const storedDarkMode = localStorage.getItem("darkMode") === "true";
+
+  document.body.classList.toggle("dark-mode", storedDarkMode);
+  toggleSwitch.checked = storedDarkMode;
+
   toggleSwitch.addEventListener("change", function () {
-    document.body.classList.toggle("dark-mode", this.checked);
+    const isDarkMode = this.checked;
+    document.body.classList.toggle("dark-mode", isDarkMode);
+    localStorage.setItem("darkMode", isDarkMode);
   });
 };
 
 darkMode();
+
